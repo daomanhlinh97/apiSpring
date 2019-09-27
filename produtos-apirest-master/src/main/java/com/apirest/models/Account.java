@@ -22,25 +22,25 @@ public class Account implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long Id;
+	private Long id;
 	
-	private String StatusKey;
+	private String statusKey;
 	
-	private String Keygen;
+	private String keygen;
 
-	private String Password;
+	private String password;
 
-	private String Name;
+	private String name;
 
-	private String Gender;
+	private String gender;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@LastModifiedDate
-	private Date BirthDay;
+	private Date birthDay;
 
-	private String Avatar;
+	private String avatar;
 	
-	private String IdAcc;
+	private String idAcc;
 	
 	public Account() {
 		super();
@@ -48,76 +48,78 @@ public class Account implements Serializable{
 	}
 
 	public Long getId() {
-		return Id;
+		return id;
 	}
 
 	public void setId(Long id) {
-		Id = id;
-	}
-
-	public String getPassword() {
-		return Password;
-	}
-
-	public void setPassword(String password) {
-		Password = password;
-	}
-
-	public String getName() {
-		return Name;
-	}
-
-	public void setName(String name) {
-		Name = name;
-	}
-
-	public String getGender() {
-		return Gender;
-	}
-
-	public void setGender(String gender) {
-		Gender = gender;
-	}
-
-	public Date getBirthDay() {
-		return BirthDay;
-	}
-
-	public void setBirthDay(Date birthDay) {
-		BirthDay = birthDay;
-	}
-
-	public String getAvatar() {
-		return Avatar;
-	}
-
-	public void setAvatar(String avatar) {
-		Avatar = avatar;
-	}
-
-	public String getIdAcc() {
-		return IdAcc;
-	}
-
-	public void setIdAcc(String idAcc) {
-		IdAcc = idAcc;
+		this.id = id;
 	}
 
 	public String getStatusKey() {
-		return StatusKey;
+		return statusKey;
 	}
 
 	public void setStatusKey(String statusKey) {
-		StatusKey = statusKey;
+		this.statusKey = statusKey;
 	}
 
 	public String getKeygen() {
-		return Keygen;
+		return keygen;
 	}
 
 	public void setKeygen(String keygen) {
-		Keygen = keygen;
+		this.keygen = keygen;
 	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public Date getBirthDay() {
+		return birthDay;
+	}
+
+	public void setBirthDay(Date birthDay) {
+		this.birthDay = birthDay;
+	}
+
+	public String getAvatar() {
+		return avatar;
+	}
+
+	public void setAvatar(String avatar) {
+		this.avatar = avatar;
+	}
+
+	public String getIdAcc() {
+		return idAcc;
+	}
+
+	public void setIdAcc(String idAcc) {
+		this.idAcc = idAcc;
+	}
+
+	
 	
 
 }
