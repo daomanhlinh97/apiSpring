@@ -22,34 +22,26 @@ import org.springframework.data.annotation.LastModifiedDate;
 public class Account implements Serializable{
 	
 	@Id
-	@Column(name="id")
+
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
-	
-	@Column(name="statuskey")
-	private String statuskey;
-	
-	@Column(name="keygen")
+
+	private String statuskey;	
+
 	private String keygen;
 	
-	@Column(name="password")
 	private String password;
 
-	@Column(name="name")
 	private String name;
 
-	@Column(name="gender")
 	private String gender;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@LastModifiedDate
-	@Column(name="birthday")
 	private Date birthday;
 
-	@Column(name="avatar")
 	private String avatar;
 	
-	@Column(name="idacc")
 	private String idacc;
 	
 	public Account() {
