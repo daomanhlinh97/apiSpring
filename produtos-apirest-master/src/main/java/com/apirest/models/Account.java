@@ -1,4 +1,4 @@
-package com.produtos.apirest.models;
+package com.apirest.models;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -18,7 +18,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 
 @Entity
 @Table(name="Account")
-public class Produto implements Serializable{
+public class Account implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -42,7 +42,7 @@ public class Produto implements Serializable{
 	
 	private String IdAcc;
 	
-	public Produto() {
+	public Account() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
