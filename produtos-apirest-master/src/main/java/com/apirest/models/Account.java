@@ -22,25 +22,25 @@ public class Account implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long id;
+	private Long Id;
 	
-	private String status_key;
+	private String StatusKey;
 	
-	private String keygen;
+	private String Keygen;
 
-	private String password;
+	private String Password;
 
-	private String name;
+	private String Name;
 
-	private String gender;
+	private String Gender;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@LastModifiedDate
-	private Date birth_day;
+	private Date BirthDay;
 
-	private String avatar;
+	private String Avatar;
 	
-	private String id_acc;
+	private String IdAcc;
 	
 	public Account() {
 		super();
@@ -48,77 +48,76 @@ public class Account implements Serializable{
 	}
 
 	public Long getId() {
-		return id;
+		return Id;
 	}
 
 	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getStatus_key() {
-		return status_key;
-	}
-
-	public void setStatus_key(String status_key) {
-		this.status_key = status_key;
-	}
-
-	public String getKeygen() {
-		return keygen;
-	}
-
-	public void setKeygen(String keygen) {
-		this.keygen = keygen;
+		Id = id;
 	}
 
 	public String getPassword() {
-		return password;
+		return Password;
 	}
 
 	public void setPassword(String password) {
-		this.password = password;
+		Password = password;
 	}
 
 	public String getName() {
-		return name;
+		return Name;
 	}
 
 	public void setName(String name) {
-		this.name = name;
+		Name = name;
 	}
 
 	public String getGender() {
-		return gender;
+		return Gender;
 	}
 
 	public void setGender(String gender) {
-		this.gender = gender;
+		Gender = gender;
 	}
 
-	public Date getBirth_day() {
-		return birth_day;
+	public Date getBirthDay() {
+		return BirthDay;
 	}
 
-	public void setBirth_day(Date birth_day) {
-		this.birth_day = birth_day;
+	public void setBirthDay(Date birthDay) {
+		BirthDay = birthDay;
 	}
 
 	public String getAvatar() {
-		return avatar;
+		return Avatar;
 	}
 
 	public void setAvatar(String avatar) {
-		this.avatar = avatar;
+		Avatar = avatar;
 	}
 
-	public String getId_acc() {
-		return id_acc;
+	public String getIdAcc() {
+		return IdAcc;
 	}
 
-	public void setId_acc(String id_acc) {
-		this.id_acc = id_acc;
+	public void setIdAcc(String idAcc) {
+		IdAcc = idAcc;
 	}
 
+	public String getStatusKey() {
+		return StatusKey;
+	}
+
+	public void setStatusKey(String statusKey) {
+		StatusKey = statusKey;
+	}
+
+	public String getKeygen() {
+		return Keygen;
+	}
+
+	public void setKeygen(String keygen) {
+		Keygen = keygen;
+	}
 	
 
 }
