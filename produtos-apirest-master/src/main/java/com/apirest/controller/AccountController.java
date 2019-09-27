@@ -23,7 +23,7 @@ import com.apirest.dao.AccountDAO;
 import com.apirest.models.Account;
 
 @RestController
-@RequestMapping("/Account")
+@RequestMapping("/account")
 public class AccountController{
 	
 	@Autowired
@@ -35,7 +35,7 @@ public class AccountController{
 		List<Account> listAcc = DAO.findAll();   
 	    
 		for(int i=0;i<listAcc.size();i++) {
-			if(req.getIdAcc().equals(listAcc.get(i).getIdAcc())==true) {
+			if(req.getIdacc().equals(listAcc.get(i).getIdacc())==true) {
 				return "false";
 			}
 		}
@@ -51,9 +51,9 @@ public class AccountController{
 		List<Account> listAcc = DAO.findAll();   
 	    
 		for(int i=0;i<listAcc.size();i++) {
-			if(idacc.equals(listAcc.get(i).getIdAcc())==true) {
+			if(idacc.equals(listAcc.get(i).getIdacc())==true) {
 				listAcc.get(i).setKeygen(key);
-				listAcc.get(i).setStatusKey("active");
+				listAcc.get(i).setStatuskey("active");
 				DAO.save(listAcc.get(i));
 				return "true";
 			}
@@ -69,9 +69,9 @@ public class AccountController{
 		List<Account> listAcc = DAO.findAll();   
 	    
 		for(int i=0;i<listAcc.size();i++) {
-			if(idacc.equals(listAcc.get(i).getIdAcc())==true) {
+			if(idacc.equals(listAcc.get(i).getIdacc())==true) {
 				
-				listAcc.get(i).setStatusKey(statusKey);
+				listAcc.get(i).setStatuskey(statusKey);
 				DAO.save(listAcc.get(i));
 				return "true";
 			}
@@ -94,7 +94,7 @@ public class AccountController{
 		List<Account> listAcc = DAO.findAll();
 
 		for(int i=0;i<listAcc.size();i++) {
-			if(idacc.equals(listAcc.get(i).getIdAcc())==true && pass.equals(listAcc.get(i).getPassword())==true) {
+			if(idacc.equals(listAcc.get(i).getIdacc())==true && pass.equals(listAcc.get(i).getPassword())==true) {
 				return "true";
 			}
 		}		
