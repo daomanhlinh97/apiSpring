@@ -18,7 +18,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 
 
 @Entity
-@Table(name="account",schema = "targetSchemaName")
+@Table(name="account")
 public class Account implements Serializable{
 	
 	@Id
@@ -36,8 +36,6 @@ public class Account implements Serializable{
 
 	private String gender;
 	
-	@Temporal(TemporalType.TIMESTAMP)
-	@LastModifiedDate
 	private Date birthday;
 
 	private String avatar;
