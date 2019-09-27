@@ -18,7 +18,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 
 
 @Entity
-@Table(name="account")
+@Table(name="account",schema = "targetSchemaName")
 public class Account implements Serializable{
 	
 	@Id
