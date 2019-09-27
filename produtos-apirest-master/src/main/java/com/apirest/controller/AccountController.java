@@ -35,7 +35,7 @@ public class AccountController{
 		List<Account> listAcc = DAO.findAll();   
 	    
 		for(int i=0;i<listAcc.size();i++) {
-			if(req.getIdAcc().equals(listAcc.get(i).getIdAcc())==true) {
+			if(req.getId_acc().equals(listAcc.get(i).getId_acc())==true) {
 				return "false";
 			}
 		}
@@ -51,9 +51,9 @@ public class AccountController{
 		List<Account> listAcc = DAO.findAll();   
 	    
 		for(int i=0;i<listAcc.size();i++) {
-			if(idacc.equals(listAcc.get(i).getIdAcc())==true) {
+			if(idacc.equals(listAcc.get(i).getId_acc())==true) {
 				listAcc.get(i).setKeygen(key);
-				listAcc.get(i).setStatusKey("active");
+				listAcc.get(i).setStatus_key("active");
 				DAO.save(listAcc.get(i));
 				return "true";
 			}
@@ -69,9 +69,9 @@ public class AccountController{
 		List<Account> listAcc = DAO.findAll();   
 	    
 		for(int i=0;i<listAcc.size();i++) {
-			if(idacc.equals(listAcc.get(i).getIdAcc())==true) {
+			if(idacc.equals(listAcc.get(i).getId_acc())==true) {
 				
-				listAcc.get(i).setStatusKey(statusKey);
+				listAcc.get(i).setStatus_key(statusKey);
 				DAO.save(listAcc.get(i));
 				return "true";
 			}
@@ -94,7 +94,7 @@ public class AccountController{
 		List<Account> listAcc = DAO.findAll();
 
 		for(int i=0;i<listAcc.size();i++) {
-			if(idacc.equals(listAcc.get(i).getIdAcc())==true && pass.equals(listAcc.get(i).getPassword())==true) {
+			if(idacc.equals(listAcc.get(i).getId_acc())==true && pass.equals(listAcc.get(i).getPassword())==true) {
 				return "true";
 			}
 		}		

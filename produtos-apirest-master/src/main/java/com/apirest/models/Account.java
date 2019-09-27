@@ -24,7 +24,7 @@ public class Account implements Serializable{
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
-	private String statusKey;
+	private String status_key;
 	
 	private String keygen;
 
@@ -36,11 +36,11 @@ public class Account implements Serializable{
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@LastModifiedDate
-	private Date birthDay;
+	private Date birth_day;
 
 	private String avatar;
 	
-	private String idAcc;
+	private String id_acc;
 	
 	public Account() {
 		super();
@@ -55,12 +55,12 @@ public class Account implements Serializable{
 		this.id = id;
 	}
 
-	public String getStatusKey() {
-		return statusKey;
+	public String getStatus_key() {
+		return status_key;
 	}
 
-	public void setStatusKey(String statusKey) {
-		this.statusKey = statusKey;
+	public void setStatus_key(String status_key) {
+		this.status_key = status_key;
 	}
 
 	public String getKeygen() {
@@ -95,12 +95,12 @@ public class Account implements Serializable{
 		this.gender = gender;
 	}
 
-	public Date getBirthDay() {
-		return birthDay;
+	public Date getBirth_day() {
+		return birth_day;
 	}
 
-	public void setBirthDay(Date birthDay) {
-		this.birthDay = birthDay;
+	public void setBirth_day(Date birth_day) {
+		this.birth_day = birth_day;
 	}
 
 	public String getAvatar() {
@@ -111,15 +111,14 @@ public class Account implements Serializable{
 		this.avatar = avatar;
 	}
 
-	public String getIdAcc() {
-		return idAcc;
+	public String getId_acc() {
+		return id_acc;
 	}
 
-	public void setIdAcc(String idAcc) {
-		this.idAcc = idAcc;
+	public void setId_acc(String id_acc) {
+		this.id_acc = id_acc;
 	}
 
-	
 	
 
 }
