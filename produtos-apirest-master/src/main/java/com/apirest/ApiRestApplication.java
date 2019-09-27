@@ -12,3 +12,11 @@ public class ApiRestApplication {
 		SpringApplication.run(ApiRestApplication.class, args);
 	}
 }
+
+@RestController
+class HelloController{
+	@GetMapping("/")
+	String hello() {
+		return "Hello World";
+	}
+}
