@@ -36,7 +36,7 @@ public class Account implements Serializable{
 
 	private String gender;
 	
-	private Date birthday;
+	private String birthday;
 
 	private String avatar;
 	
@@ -95,11 +95,13 @@ public class Account implements Serializable{
 		this.gender = gender;
 	}
 
-	public Date getBirthday() {
+	
+
+	public String getBirthday() {
 		return birthday;
 	}
 
-	public void setBirthday(Date birthday) {
+	public void setBirthday(String birthday) {
 		this.birthday = birthday;
 	}
 
