@@ -35,7 +35,7 @@ public class Account implements Serializable{
 	
 	private String gender;
 	
-	private String birthday;
+	private Date birthday;
 
 	private String avatar;
 	
