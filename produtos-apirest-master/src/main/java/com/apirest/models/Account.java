@@ -94,13 +94,11 @@ public class Account implements Serializable{
 		this.gender = gender;
 	}
 
-	
-
-	public String getBirthday() {
+	public Date getBirthday() {
 		return birthday;
 	}
 
-	public void setBirthday(String birthday) {
+	public void setBirthday(Date birthday) {
 		this.birthday = birthday;
 	}
 
