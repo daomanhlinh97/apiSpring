@@ -18,11 +18,10 @@ import org.springframework.data.annotation.LastModifiedDate;
 
 
 @Entity
-@Table(name="account", schema = "SYS")
+@Table(name="account")
 public class Account implements Serializable{
 	
 	@Id
-
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 

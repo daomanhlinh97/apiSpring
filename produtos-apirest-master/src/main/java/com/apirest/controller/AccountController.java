@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.apirest.dao.AccountDAO;
 import com.apirest.models.Account;
 
-@CrossOrigin(origins = "*")
+
 @RestController
 @RequestMapping("/account")
 public class AccountController{
