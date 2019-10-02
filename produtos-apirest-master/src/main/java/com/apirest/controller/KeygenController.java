@@ -44,19 +44,19 @@ public class KeygenController{
 				return "false";
 			}
 		}
-//		int check=0;
-//		for(int i=0;i<listAcc.size();i++) {
-//			if(req.getAccount().equals(listAcc.get(i).getAccount())==true) {
-//				check =1;
-//			}
-//				
-//		}
-//		if(check==1) {
+		int check=0;
+		for(int i=0;i<listAcc.size();i++) {
+			if(req.getAccount().equals(listAcc.get(i).getAccount())==true) {
+				check =1;
+			}
+				
+		}
+		if(check==1) {
 			DAO.save(req);
 			return "true";
-//		}
-//		else 
-//			return "false";
+		}
+		else 
+			return "false";
 		
 
 	}
