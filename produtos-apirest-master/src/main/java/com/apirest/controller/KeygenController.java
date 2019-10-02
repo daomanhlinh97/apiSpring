@@ -32,12 +32,12 @@ public class KeygenController{
 	@Autowired
 	KeygenDAO DAO;
 	AccountDAO accDAO;
-	
+	List<Account> listAcc = accDAO.findAll(); 
 	/* to save an Account*/
 	@PostMapping("/add")
-	public String createAccount(@Valid @RequestBody Keygen req) {
+	public String createKeygen(@Valid @RequestBody Keygen req) {
 		List<Keygen> listKey = DAO.findAll();   
-//	    List<Account> listAcc = accDAO.findAll(); 
+	   
 		for(int i=0;i<listKey.size();i++) {
 			if(req.getAccount().equals(listKey.get(i).getAccount())==true && req.getKeygen().equals(listKey.get(i).getKeygen())==true) {
 				return "false";
