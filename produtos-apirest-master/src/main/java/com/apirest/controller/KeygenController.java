@@ -21,6 +21,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.apirest.dao.KeygenDAO;
 import com.apirest.models.Keygen;
+import com.apirest.dao.AccountDAO;
+import com.apirest.models.Account;
 
 
 @RestController
@@ -29,19 +31,31 @@ public class KeygenController{
 	
 	@Autowired
 	KeygenDAO DAO;
+	AccountDAO accDAO;
 	
 	/* to save an Account*/
 	@PostMapping("/add")
 	public String createAccount(@Valid @RequestBody Keygen req) {
-		List<Keygen> listAcc = DAO.findAll();   
-	    
-		for(int i=0;i<listAcc.size();i++) {
-			if(req.getAccount().equals(listAcc.get(i).getAccount())==true && req.getKeygen().equals(listAcc.get(i).getKeygen())==true) {
+		List<Keygen> listKey = DAO.findAll();   
+	    List<Account> listAcc = accDAO.findAll(); 
+		for(int i=0;i<listKey.size();i++) {
+			if(req.getAccount().equals(listKey.get(i).getAccount())==true && req.getKeygen().equals(listKey.get(i).getKeygen())==true) {
 				return "false";
 			}
 		}
-		DAO.save(req);
-		return "true";
+		int check=0;
+		for(int i=0;i<listAcc.size();i++) {
+			if(req.getAccount().equals(listAcc.get(i).getAccount())==true) {
+				check =1;
+			}
+				
+		}
+		if(check==1) {
+			DAO.save(req);
+			return "true";
+		}
+		else 
+			return "false";
 
 	}
 
