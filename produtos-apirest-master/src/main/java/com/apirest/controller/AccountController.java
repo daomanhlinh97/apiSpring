@@ -1,14 +1,21 @@
 package com.apirest.controller;
 
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
 import javax.validation.Valid;
+import javax.xml.bind.DatatypeConverter;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,7 +39,7 @@ public class AccountController{
 	
 	/* to save an Account*/
 	@PostMapping("/add")
-	public String createAccount(@Valid @RequestBody Account req) {
+	public String createAccount(@Valid @RequestBody Account req) throws NoSuchAlgorithmException {
 		List<Account> listAcc = DAO.findAll();   
 	    
 		for(int i=0;i<listAcc.size();i++) {
@@ -40,29 +47,25 @@ public class AccountController{
 				return "false";
 			}
 		}
+		
+		String hash = "35454B055CC325EA1AF2126E27707052";
+	    String password = req.getPassword();
+	         
+	    MessageDigest md = MessageDigest.getInstance("MD5");
+	    md.update(password.getBytes());
+	    byte[] digest = md.digest();
+	    String myHash = DatatypeConverter
+	      .printHexBinary(digest).toUpperCase();
+	         
+	    assertThat(myHash.equals(hash)).isTrue();
+		
+	    req.setPassword(password);
 		DAO.save(req);
 		return "true";
 
 	}
 
 	
-	/* to save an Account*/
-//	@PostMapping("/addKey/{idacc}/{key}")
-//	public String createKey(@PathVariable(value="idacc") String idacc, @PathVariable(value="key") String key) {
-//		List<Account> listAcc = DAO.findAll();   
-//	    
-//		for(int i=0;i<listAcc.size();i++) {
-//			if(idacc.equals(listAcc.get(i).getIdacc())==true) {
-//				listAcc.get(i).setKeygen(key);
-//				listAcc.get(i).setStatuskey("active");
-//				DAO.save(listAcc.get(i));
-//				return "true";
-//			}
-//		}
-//		
-//		return "false";
-//	}
-//	
 	
 	/* to save an Account*/
 //	@PostMapping("/updateKey/{idacc}/{statusKey}")
