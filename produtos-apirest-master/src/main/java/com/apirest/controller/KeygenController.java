@@ -31,18 +31,18 @@ public class KeygenController{
 	
 	@Autowired
 	KeygenDAO DAO;
-	AccountDAO accDAO;
+//	AccountDAO accDAO;
 	
 	/* to save an Account*/
 	@PostMapping("/add")
 	public String createAccount(@Valid @RequestBody Keygen req) {
-		List<Keygen> listKey = DAO.findAll();   
-	    List<Account> listAcc = accDAO.findAll(); 
-		for(int i=0;i<listKey.size();i++) {
-			if(req.getAccount().equals(listKey.get(i).getAccount())==true && req.getKeygen().equals(listKey.get(i).getKeygen())==true) {
-				return "false";
-			}
-		}
+//		List<Keygen> listKey = DAO.findAll();   
+//	    List<Account> listAcc = accDAO.findAll(); 
+//		for(int i=0;i<listKey.size();i++) {
+//			if(req.getAccount().equals(listKey.get(i).getAccount())==true && req.getKeygen().equals(listKey.get(i).getKeygen())==true) {
+//				return "false";
+//			}
+//		}
 //		int check=0;
 //		for(int i=0;i<listAcc.size();i++) {
 //			if(req.getAccount().equals(listAcc.get(i).getAccount())==true) {
@@ -51,11 +51,20 @@ public class KeygenController{
 //				
 //		}
 //		if(check==1) {
-			DAO.save(req);
-			return "true";
+//			DAO.save(req);
+//			return "true";
 //		}
 //		else 
 //			return "false";
+		List<Keygen> listAcc = DAO.findAll();   
+	    
+		for(int i=0;i<listAcc.size();i++) {
+			if(req.getAccount().equals(listAcc.get(i).getAccount())==true && req.getKeygen().equals(listAcc.get(i).getKeygen())==true) {
+				return "false";
+			}
+		}
+		DAO.save(req);
+		return "true";
 
 	}
 
