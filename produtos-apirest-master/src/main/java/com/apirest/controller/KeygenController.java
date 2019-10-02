@@ -36,7 +36,7 @@ public class KeygenController{
 		List<Keygen> listAcc = DAO.findAll();   
 	    
 		for(int i=0;i<listAcc.size();i++) {
-			if(req.getAccount().equals(listAcc.get(i).getAccount())==true) {
+			if(req.getAccount().equals(listAcc.get(i).getAccount())==true && req.getKeygen().equals(listAcc.get(i).getKeygen())==true) {
 				return "false";
 			}
 		}
