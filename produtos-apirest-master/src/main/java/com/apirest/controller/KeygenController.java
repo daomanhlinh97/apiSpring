@@ -37,7 +37,7 @@ public class KeygenController{
 	@PostMapping("/add")
 	public String createAccount(@Valid @RequestBody Keygen req) {
 		List<Keygen> listKey = DAO.findAll();   
-	    List<Account> listAcc = accDAO.findAll(); 
+//	    List<Account> listAcc = accDAO.findAll(); 
 		for(int i=0;i<listKey.size();i++) {
 			if(req.getAccount().equals(listKey.get(i).getAccount())==true && req.getKeygen().equals(listKey.get(i).getKeygen())==true) {
 				return "false";
