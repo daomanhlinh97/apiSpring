@@ -60,13 +60,13 @@ public class KeygenController{
 	public List<Keygen> getDriverById(@PathVariable(value="account") String acc){
 		
 		List<Keygen> listKey = DAO.findAll();
-		List<Keygen> listKeycu= (List<Keygen>) new Keygen();
+		ArrayList<Keygen> list = new ArrayList<Keygen>();
 		for(int i=0;i<listKey.size();i++) {
 			if(acc.equals(listKey.get(i).getAccount())==true) {
-				listKeycu.add(listKey.get(i));
+				list.add(listKey.get(i));
 			}
 		}
-		return listKeycu;
+		return list;
 		
 	}
 }
