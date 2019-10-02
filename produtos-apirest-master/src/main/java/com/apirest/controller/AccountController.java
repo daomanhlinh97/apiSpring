@@ -102,4 +102,20 @@ public class AccountController{
 		return "false";	
 	}
 	
+	
+//	/*get Account by id*/
+	@GetMapping("/get/{idacc}")
+	public Account getDriverById(@PathVariable(value="idacc") String idacc){
+		
+		List<Account> listAcc = DAO.findAll();
+		
+		for(int i=0;i<listAcc.size();i++) {
+			if(idacc.equals(listAcc.get(i).getIdacc())==true) {
+				return listAcc.get(i);
+			}
+		}
+		Account acc = new Account();
+			return acc;
+		
+	}
 }
