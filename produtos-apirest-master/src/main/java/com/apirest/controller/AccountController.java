@@ -90,12 +90,21 @@ public class AccountController{
 	}
 
 	@GetMapping("/login/{idacc}/{pass}")
-	public String loginDriver(@PathVariable(value="idacc") String idacc, @PathVariable(value="pass") String pass ){
+	public String loginDriver(@PathVariable(value="idacc") String idacc, @PathVariable(value="pass") String pass ) throws NoSuchAlgorithmException{
+		
+		String hash = "35454B055CC325EA1AF2126E27707052";
+	    String password = pass;
+	         
+	    MessageDigest md = MessageDigest.getInstance("MD5");
+	    md.update(password.getBytes());
+	    byte[] digest = md.digest();
+	    String myHash = DatatypeConverter
+	      .printHexBinary(digest).toUpperCase();
 		
 		List<Account> listAcc = DAO.findAll();
 
 		for(int i=0;i<listAcc.size();i++) {
-			if(idacc.equals(listAcc.get(i).getAccount())==true && pass.equals(listAcc.get(i).getPassword())==true) {
+			if(idacc.equals(listAcc.get(i).getAccount())==true && myHash.equals(listAcc.get(i).getPassword())==true) {
 				return "true";
 			}
 		}		
