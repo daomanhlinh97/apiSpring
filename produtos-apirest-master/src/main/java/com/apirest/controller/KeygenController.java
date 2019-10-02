@@ -31,7 +31,7 @@ public class KeygenController{
 	
 	@Autowired
 	KeygenDAO DAO;
-//	AccountDAO accDAO;
+	AccountDAO accDAO;
 	
 	/* to save an Account*/
 	@PostMapping("/add")
