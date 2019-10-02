@@ -36,7 +36,7 @@ public class AccountController{
 		List<Account> listAcc = DAO.findAll();   
 	    
 		for(int i=0;i<listAcc.size();i++) {
-			if(req.getIdacc().equals(listAcc.get(i).getIdacc())==true) {
+			if(req.getAccount().equals(listAcc.get(i).getAccount())==true) {
 				return "false";
 			}
 		}
@@ -47,39 +47,39 @@ public class AccountController{
 
 	
 	/* to save an Account*/
-	@PostMapping("/addKey/{idacc}/{key}")
-	public String createKey(@PathVariable(value="idacc") String idacc, @PathVariable(value="key") String key) {
-		List<Account> listAcc = DAO.findAll();   
-	    
-		for(int i=0;i<listAcc.size();i++) {
-			if(idacc.equals(listAcc.get(i).getIdacc())==true) {
-				listAcc.get(i).setKeygen(key);
-				listAcc.get(i).setStatuskey("active");
-				DAO.save(listAcc.get(i));
-				return "true";
-			}
-		}
-		
-		return "false";
-	}
-	
+//	@PostMapping("/addKey/{idacc}/{key}")
+//	public String createKey(@PathVariable(value="idacc") String idacc, @PathVariable(value="key") String key) {
+//		List<Account> listAcc = DAO.findAll();   
+//	    
+//		for(int i=0;i<listAcc.size();i++) {
+//			if(idacc.equals(listAcc.get(i).getIdacc())==true) {
+//				listAcc.get(i).setKeygen(key);
+//				listAcc.get(i).setStatuskey("active");
+//				DAO.save(listAcc.get(i));
+//				return "true";
+//			}
+//		}
+//		
+//		return "false";
+//	}
+//	
 	
 	/* to save an Account*/
-	@PostMapping("/updateKey/{idacc}/{statusKey}")
-	public String updateKey(@PathVariable(value="idacc") String idacc, @PathVariable(value="statusKey") String statusKey) {
-		List<Account> listAcc = DAO.findAll();   
-	    
-		for(int i=0;i<listAcc.size();i++) {
-			if(idacc.equals(listAcc.get(i).getIdacc())==true) {
-				
-				listAcc.get(i).setStatuskey(statusKey);
-				DAO.save(listAcc.get(i));
-				return "true";
-			}
-		}
-		
-		return "false";
-	}
+//	@PostMapping("/updateKey/{idacc}/{statusKey}")
+//	public String updateKey(@PathVariable(value="idacc") String idacc, @PathVariable(value="statusKey") String statusKey) {
+//		List<Account> listAcc = DAO.findAll();   
+//	    
+//		for(int i=0;i<listAcc.size();i++) {
+//			if(idacc.equals(listAcc.get(i).getIdacc())==true) {
+//				
+//				listAcc.get(i).setStatuskey(statusKey);
+//				DAO.save(listAcc.get(i));
+//				return "true";
+//			}
+//		}
+//		
+//		return "false";
+//	}
 	
 	/*get all Account*/
 	@GetMapping("/getall")
@@ -95,7 +95,7 @@ public class AccountController{
 		List<Account> listAcc = DAO.findAll();
 
 		for(int i=0;i<listAcc.size();i++) {
-			if(idacc.equals(listAcc.get(i).getIdacc())==true && pass.equals(listAcc.get(i).getPassword())==true) {
+			if(idacc.equals(listAcc.get(i).getAccount())==true && pass.equals(listAcc.get(i).getPassword())==true) {
 				return "true";
 			}
 		}		
@@ -110,7 +110,7 @@ public class AccountController{
 		List<Account> listAcc = DAO.findAll();
 		
 		for(int i=0;i<listAcc.size();i++) {
-			if(idacc.equals(listAcc.get(i).getIdacc())==true) {
+			if(idacc.equals(listAcc.get(i).getAccount())==true) {
 				return listAcc.get(i);
 			}
 		}

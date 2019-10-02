@@ -24,22 +24,22 @@ public class Account implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
-
-	private String statuskey;	
-	
-	private String keygen;
 	
 	private String password;
 
+	private String account;
+	
 	private String name;
 	
-	private String gender;
-	
-	private Date birthday;
-
 	private String avatar;
+
+	private Date bỉrthday;
 	
-	private String idacc;
+	private String numofbank;
+	
+	private String email;
+	
+	private String phone;
 	
 	public Account() {
 		super();
@@ -54,28 +54,20 @@ public class Account implements Serializable{
 		this.id = id;
 	}
 
-	public String getStatuskey() {
-		return statuskey;
-	}
-
-	public void setStatuskey(String statuskey) {
-		this.statuskey = statuskey;
-	}
-
-	public String getKeygen() {
-		return keygen;
-	}
-
-	public void setKeygen(String keygen) {
-		this.keygen = keygen;
-	}
-
 	public String getPassword() {
 		return password;
 	}
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getAccount() {
+		return account;
+	}
+
+	public void setAccount(String account) {
+		this.account = account;
 	}
 
 	public String getName() {
@@ -86,22 +78,6 @@ public class Account implements Serializable{
 		this.name = name;
 	}
 
-	public String getGender() {
-		return gender;
-	}
-
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
-
-	public Date getBirthday() {
-		return birthday;
-	}
-
-	public void setBirthday(Date birthday) {
-		this.birthday = birthday;
-	}
-
 	public String getAvatar() {
 		return avatar;
 	}
@@ -110,12 +86,37 @@ public class Account implements Serializable{
 		this.avatar = avatar;
 	}
 
-	public String getIdacc() {
-		return idacc;
+	public Date getBỉrthday() {
+		return bỉrthday;
 	}
 
-	public void setIdacc(String idacc) {
-		this.idacc = idacc;
+	public void setBỉrthday(Date bỉrthday) {
+		this.bỉrthday = bỉrthday;
 	}
 
+	public String getNumofbank() {
+		return numofbank;
+	}
+
+	public void setNumofbank(String numofbank) {
+		this.numofbank = numofbank;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	
 }
